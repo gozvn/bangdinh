@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản Phẩm | Băng Dính Việt Hàn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .shop-header {
+      background: linear-gradient(rgba(10, 10, 26, 0.9), rgba(10, 10, 26, 0.9)), url('images/page5_img0.png') center/cover;
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/page1_img0.png" alt="Việt Hàn Logo">
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="index.html">Trang chủ</a>
+          <a href="shop.html" style="color: var(--primary-color)">Sản phẩm</a>
+          <a href="about.html">Giới thiệu</a>
+          <a href="contact.html">Liên hệ</a>
+        </nav>
+        <button id="theme-switch" class="theme-switch" aria-label="Đổi giao diện">
+          <span class="icon">🌙</span>
+        </button>
+        <div class="hamburger">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shop Header -->
+  <div class="shop-header">
+    <div class="container">
+      <h1 style="font-size: 3rem; margin-bottom: 15px;">Tất cả Sản phẩm</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem;">Giải pháp bảo vệ hàng hóa đa dạng và chất lượng từ Việt Hàn</p>
+    </div>
+  </div>
+
+  <!-- Shop Content -->
+  <section class="container">
+    <div class="filters" id="shop-filters">
+      <button class="filter-btn active" data-filter="all">Tất cả</button>
+      <button class="filter-btn" data-filter="Băng dính đóng gói">Đóng gói</button>
+      <button class="filter-btn" data-filter="Băng dính công nghiệp">Công nghiệp</button>
+      <button class="filter-btn" data-filter="Băng dính chuyên dụng">Chuyên dụng</button>
+      <button class="filter-btn" data-filter="Băng dính văn phòng">Văn phòng</button>
+      <button class="filter-btn" data-filter="Màng PE & Phụ kiện">Màng PE</button>
+    </div>
+
+    <div class="product-grid" id="full-shop-grid">
+      <!-- Products injected here via JS -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="images/page1_img0.png" alt="Logo" style="height: 50px; margin-bottom: 20px;">
+          <p>CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN</p>
+          <p>Tiên phong Công nghệ - Đối tác Tin cậy</p>
+        </div>
+        <div class="footer-col">
+          <h3>Sản Phẩm</h3>
+          <ul>
+            <li><a href="shop.html">Băng dính đóng gói</a></li>
+            <li><a href="shop.html">Băng dính công nghiệp</a></li>
+            <li><a href="shop.html">Băng dính chuyên dụng</a></li>
+            <li><a href="shop.html">Màng PE & Phụ kiện</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Liên Hệ</h3>
+          <p>Hotline (GĐ Kinh Doanh): 0582 160 999</p>
+          <p>Email: contact@viethantape.com</p>
+          <div style="margin-top: 15px;">
+            <a href="contact.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9rem;">Yêu cầu báo giá</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Băng Dính Việt Hàn. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Shop specific logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const shopGrid = document.getElementById('full-shop-grid');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      function renderProducts(filter = 'all') {
+        shopGrid.innerHTML = '';
+        let filteredProducts = products;
+        
+        if (filter !== 'all') {
+          filteredProducts = products.filter(p => p.category === filter);
+        }
+
+        filteredProducts.forEach(product => {
+          shopGrid.innerHTML += `
+            <div class="product-card">
+              <img src="${product.image}" alt="${product.name}" class="product-img">
+              <div class="product-info">
+                <div class="product-category">${product.category}</div>
+                <h3 class="product-title">${product.name}</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">${product.nameEn}</p>
+                <a href="product.html?id=${product.id}" class="btn btn-outline" style="width: 100%; text-align: center;">Chi tiết</a>
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      // Initial render
+      renderProducts();
+
+      // Filter click events
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Add to clicked
+          btn.classList.add('active');
+          // Filter
+          renderProducts(btn.dataset.filter);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

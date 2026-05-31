@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ | Băng Dính Việt Hàn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .page-header {
+      background: linear-gradient(rgba(10, 10, 26, 0.9), rgba(10, 10, 26, 0.9)), url('images/page5_img0.png') center/cover;
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin: 80px 0;
+    }
+
+    .contact-info {
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 8px;
+    }
+
+    .info-item {
+      margin-bottom: 30px;
+    }
+
+    .info-item h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/page1_img0.png" alt="Việt Hàn Logo">
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="index.html">Trang chủ</a>
+          <a href="shop.html">Sản phẩm</a>
+          <a href="about.html">Giới thiệu</a>
+          <a href="contact.html" style="color: var(--primary-color)">Liên hệ</a>
+        </nav>
+        <button id="theme-switch" class="theme-switch" aria-label="Đổi giao diện">
+          <span class="icon">🌙</span>
+        </button>
+        <div class="hamburger">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 style="font-size: 3rem; margin-bottom: 15px;">Liên Hệ Với Chúng Tôi</h1>
+      <p style="color: var(--text-muted); font-size: 1.2rem;">Sẵn sàng tư vấn và cung cấp báo giá tốt nhất</p>
+    </div>
+  </div>
+
+  <div class="container contact-container">
+    <div class="contact-info">
+      <h2 style="margin-bottom: 30px;">Thông Tin Liên Hệ</h2>
+      
+      <div class="info-item">
+        <h3>Điện thoại / Zalo</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 5px;">0582 160 999 (Giám đốc KD)</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Email</h3>
+        <p>contact@viethantape.com</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Công ty</h3>
+        <p>CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN</p>
+        <p>(VIET HAN ADHESIVE TAPE)</p>
+      </div>
+    </div>
+
+    <div>
+      <h2 style="margin-bottom: 30px;">Gửi Yêu Cầu</h2>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Yêu cầu đã được gửi.');">
+        <div class="form-group">
+          <input type="text" placeholder="Họ và tên" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Số điện thoại" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email (Tùy chọn)">
+        </div>
+        <div class="form-group">
+          <textarea rows="5" placeholder="Sản phẩm bạn quan tâm / Nội dung yêu cầu..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="images/page1_img0.png" alt="Logo" style="height: 50px; margin-bottom: 20px;">
+          <p>CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN</p>
+          <p>Tiên phong Công nghệ - Đối tác Tin cậy</p>
+        </div>
+        <div class="footer-col">
+          <h3>Sản Phẩm</h3>
+          <ul>
+            <li><a href="shop.html">Băng dính đóng gói</a></li>
+            <li><a href="shop.html">Băng dính công nghiệp</a></li>
+            <li><a href="shop.html">Băng dính chuyên dụng</a></li>
+            <li><a href="shop.html">Màng PE & Phụ kiện</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Liên Hệ</h3>
+          <p>Hotline (GĐ Kinh Doanh): 0582 160 999</p>
+          <p>Email: contact@viethantape.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Băng Dính Việt Hàn. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

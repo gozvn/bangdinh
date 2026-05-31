@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới Thiệu | Băng Dính Việt Hàn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .page-header {
+      background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/page2_img0.jpeg') center/cover;
+      padding: 150px 0 80px;
+      text-align: center;
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin: 80px 0;
+    }
+
+    .about-text h2 {
+      color: var(--primary-color);
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .about-image {
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      width: 100%;
+    }
+
+    .core-values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .value-card {
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      border-top: 3px solid var(--primary-color);
+    }
+
+    .value-card h3 {
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/page1_img0.png" alt="Việt Hàn Logo">
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="index.html">Trang chủ</a>
+          <a href="shop.html">Sản phẩm</a>
+          <a href="about.html" style="color: var(--primary-color)">Giới thiệu</a>
+          <a href="contact.html">Liên hệ</a>
+        </nav>
+        <button id="theme-switch" class="theme-switch" aria-label="Đổi giao diện">
+          <span class="icon">🌙</span>
+        </button>
+        <div class="hamburger">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Header Section -->
+  <div class="page-header">
+    <div class="container">
+      <h1 style="font-size: 3rem; margin-bottom: 15px;">Hồ Sơ Công Ty</h1>
+      <p style="color: var(--text-muted); font-size: 1.2rem;">Tiên phong Công nghệ - Đối tác Tin cậy</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Công ty TNHH Băng Dính Việt Hàn</h2>
+        <p><strong>Lĩnh vực cốt lõi:</strong> Sản xuất & Phân phối Băng dính, Màng PE, Xốp nổ,...</p>
+        <p><strong>Thế mạnh:</strong> Dây chuyền công nghệ tân tiến nhất – Quy trình chuẩn hóa.</p>
+        <p><strong>Cam kết:</strong> Chất lượng vượt trội – Nguồn cung ổn định – Phát triển bền vững.</p>
+        <p style="margin-top: 30px; font-style: italic; border-left: 4px solid var(--primary-color); padding-left: 15px;">
+          "Việt Hàn không chỉ cung cấp sản phẩm, chúng tôi cung cấp giải pháp bảo vệ hàng hóa tối ưu cho doanh nghiệp của bạn. Nâng tầm giá trị sản phẩm của bạn."
+        </p>
+      </div>
+      <div>
+        <img src="images/page2_img0.jpeg" alt="Sản xuất Băng Dính" class="about-image">
+      </div>
+    </div>
+
+    <section>
+      <h2 class="section-title">Giá trị <span>Cốt lõi</span></h2>
+      <div class="core-values">
+        <div class="value-card">
+          <h3>Chất lượng Vượt trội</h3>
+          <p class="text-muted">Đảm bảo độ bền, độ bám dính tối ưu với nguyên vật liệu cao cấp.</p>
+        </div>
+        <div class="value-card">
+          <h3>Công nghệ Hiện đại</h3>
+          <p class="text-muted">Áp dụng các dây chuyền sản xuất tiên tiến, tối ưu năng suất.</p>
+        </div>
+        <div class="value-card">
+          <h3>Nguồn cung Ổn định</h3>
+          <p class="text-muted">Khả năng cung cấp số lượng lớn, đúng hạn cho đối tác công nghiệp.</p>
+        </div>
+        <div class="value-card">
+          <h3>Bền vững</h3>
+          <p class="text-muted">Hướng tới các giải pháp thân thiện môi trường, phát triển lâu dài.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="images/page1_img0.png" alt="Logo" style="height: 50px; margin-bottom: 20px;">
+          <p>CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN</p>
+          <p>Tiên phong Công nghệ - Đối tác Tin cậy</p>
+        </div>
+        <div class="footer-col">
+          <h3>Sản Phẩm</h3>
+          <ul>
+            <li><a href="shop.html">Băng dính đóng gói</a></li>
+            <li><a href="shop.html">Băng dính công nghiệp</a></li>
+            <li><a href="shop.html">Băng dính chuyên dụng</a></li>
+            <li><a href="shop.html">Màng PE & Phụ kiện</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Liên Hệ</h3>
+          <p>Hotline (GĐ Kinh Doanh): 0582 160 999</p>
+          <p>Email: contact@viethantape.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Băng Dính Việt Hàn. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
