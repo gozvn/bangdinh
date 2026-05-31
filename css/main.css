@@ -1,64 +1,214 @@
 :root {
-  /* Override Bootstrap Primary Color with Viet Han Orange */
-  --bs-primary: #E8530E;
-  --bs-primary-rgb: 232, 83, 14;
-  --corporate-blue: #003366;
+  /* Premium Brand Colors */
+  --bs-primary: #FF6B35;
+  --bs-primary-rgb: 255, 107, 53;
+  --vh-gradient: linear-gradient(135deg, #FF6B35 0%, #F7C59F 100%);
+  --vh-dark-bg: #0B0E14;
+  --vh-dark-surface: #151A22;
+  --vh-glass-bg: rgba(255, 255, 255, 0.8);
+  --vh-glass-border: rgba(255, 255, 255, 0.2);
+  --vh-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --vh-shadow-hover: 0 20px 40px rgba(255, 107, 53, 0.15);
+  
+  --bs-border-radius: 12px;
+  --bs-border-radius-lg: 20px;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: var(--vh-dark-bg);
+  --bs-body-color: #E2E8F0;
+  --vh-glass-bg: rgba(21, 26, 34, 0.8);
+  --vh-glass-border: rgba(255, 255, 255, 0.05);
+  --bs-tertiary-bg: var(--vh-dark-surface);
+  --bs-border-color: rgba(255,255,255,0.05);
+  --vh-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 body {
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
-/* Custom Nav spacing */
+/* Glassmorphism Navbar */
+.navbar {
+  background: var(--vh-glass-bg) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--vh-glass-border) !important;
+  transition: all 0.3s ease;
+}
+
 .navbar-brand img {
-  height: 50px;
+  height: 45px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Custom Hero Section */
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  color: var(--bs-body-color) !important;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  opacity: 1;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: var(--vh-gradient);
+  border-radius: 3px;
+}
+
+/* Gradients & Buttons */
+.text-gradient {
+  background: var(--vh-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: var(--vh-gradient);
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+/* Hero Section */
 .hero {
-  min-height: 70vh;
+  position: relative;
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  background-color: var(--bs-tertiary-bg);
-  padding: 80px 0;
+  background: transparent !important;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .hero-img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: var(--bs-box-shadow);
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: var(--vh-shadow-soft);
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* Product Card adjustments */
-.product-img {
-  height: 250px;
-  object-fit: contain;
-  background-color: #fff; /* Ensure transparent PDFs look good */
-  padding: 10px;
+.hero-img:hover {
+  transform: scale(1.02) rotate(1deg);
 }
 
+/* Premium Product Cards */
 .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--vh-glass-border) !important;
+  border-radius: var(--bs-border-radius-lg);
+  background: var(--bs-body-bg);
+  box-shadow: var(--vh-shadow-soft);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--bs-box-shadow-lg) !important;
+  transform: translateY(-10px);
+  box-shadow: var(--vh-shadow-hover) !important;
+  border-color: rgba(255, 107, 53, 0.3) !important;
 }
 
-/* Theme switch button */
+.product-img {
+  height: 260px;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 20px;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Fade up Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Theme Switcher */
 .theme-switch {
   cursor: pointer;
-  background: transparent;
-  border: none;
-  font-size: 1.25rem;
-  color: inherit;
+  background: rgba(128, 128, 128, 0.1);
+  border: 1px solid var(--vh-glass-border);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--bs-body-color);
 }
 
-/* Footer padding */
+.theme-switch:hover {
+  background: var(--vh-gradient);
+  color: white;
+  transform: rotate(15deg);
+}
+
+/* Footer Styling */
 footer {
-  border-top: 1px solid var(--bs-border-color);
+  border-top: 1px solid var(--vh-glass-border);
+  background: var(--bs-tertiary-bg);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bs-body-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e55a2b;
 }

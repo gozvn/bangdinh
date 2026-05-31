@@ -47,20 +47,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const featuredGrid = document.getElementById('featured-grid');
   if (featuredGrid) {
     const featured = products.filter(p => p.featured).slice(0, 6);
-    featured.forEach(product => {
+    featured.forEach((product, index) => {
+      // Add staggered animation delay
+      const delay = index * 0.1;
       featuredGrid.innerHTML += `
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0">
+        <div class="col fade-up" style="transition-delay: ${delay}s">
+          <div class="card h-100 border-0">
             <img src="${product.image}" class="card-img-top product-img border-bottom" alt="${product.name}">
             <div class="card-body d-flex flex-column">
-              <span class="text-primary small fw-bold text-uppercase mb-2">${product.category}</span>
+              <span class="small fw-bold text-uppercase mb-2 text-gradient" style="width: fit-content;">${product.category}</span>
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text text-muted small mb-4">${product.nameEn}</p>
-              <a href="product.html?id=${product.id}" class="btn btn-outline-primary mt-auto w-100">Chi tiết</a>
+              <a href="product.html?id=${product.id}" class="btn btn-outline-primary mt-auto w-100 fw-semibold rounded-pill">Xem Chi Tiết</a>
             </div>
           </div>
         </div>
       `;
     });
   }
+
+  // Add fade-up class to static elements
+  const animateElements = document.querySelectorAll('.hero-img, .hero h1, .hero p, .hero .btn, h2, h3, .card, blockquote');
+  animateElements.forEach(el => el.classList.add('fade-up'));
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-up').forEach(el => {
+    observer.observe(el);
+  });
 });
