@@ -4,157 +4,169 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liên Hệ | Băng Dính Việt Hàn</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="css/main.css?v=2">
+  <link rel="stylesheet" href="css/main.css?v=3">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom py-3">
+  <nav class="vh-nav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/page1_img0.png" alt="Việt Hàn Logo">
-      </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto fw-medium">
-          <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
-          <li class="nav-item"><a class="nav-link" href="shop.html">Sản phẩm</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-          <li class="nav-item"><a class="nav-link active text-primary" href="contact.html">Liên hệ</a></li>
-        </ul>
-        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-          <button id="theme-switch" class="theme-switch" aria-label="Đổi giao diện">
-            <i class="bi bi-moon-fill"></i>
-          </button>
-          <a href="contact.html" class="btn btn-primary fw-semibold px-4">Báo giá</a>
-        </div>
+      <a class="vh-nav__logo" href="index.html"><img src="images/page1_img0.png" alt="Việt Hàn Tape"></a>
+      <ul class="vh-nav__links">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="shop.html">Sản phẩm</a></li>
+        <li><a href="about.html">Giới thiệu</a></li>
+        <li><a href="contact.html" class="active">Liên hệ</a></li>
+      </ul>
+      <div class="vh-nav__actions">
+        <button id="theme-switch" class="vh-theme-toggle"><i class="bi bi-moon-fill"></i></button>
+        <a href="contact.html" class="vh-btn vh-btn--primary vh-btn--sm"><i class="bi bi-lightning-charge-fill"></i> Báo giá</a>
+        <button class="vh-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
+  <div class="vh-nav__mobile">
+    <a href="index.html">Trang chủ</a><a href="shop.html">Sản phẩm</a><a href="about.html">Giới thiệu</a><a href="contact.html">Liên hệ</a>
+  </div>
 
   <!-- Page Header -->
-  <div class="bg-body-tertiary border-bottom">
-    <div class="container py-5 text-center">
-      <h1 class="display-5 fw-bold mb-3">Liên Hệ Với Chúng Tôi</h1>
-      <p class="lead text-body-secondary mb-0">Sẵn sàng tư vấn và cung cấp báo giá tốt nhất cho doanh nghiệp</p>
+  <div class="vh-page-header">
+    <div class="container">
+      <div class="section-label" style="justify-content: center;">Kết nối với chúng tôi</div>
+      <h1 class="vh-page-header__title">Liên hệ <span class="text-gradient">Việt Hàn Tape</span></h1>
+      <p class="vh-page-header__desc">Đội ngũ chuyên gia sẵn sàng tư vấn và cung cấp báo giá tốt nhất cho doanh nghiệp.</p>
     </div>
   </div>
 
   <!-- Contact Content -->
-  <main class="flex-grow-1 py-5">
+  <section class="vh-section">
     <div class="container">
-      <div class="row g-5">
-        
-        <!-- Contact Info -->
-        <div class="col-lg-5">
-          <div class="bg-body-tertiary p-5 rounded-4 shadow-sm h-100 border">
-            <h3 class="fw-bold mb-5">Thông Tin Liên Hệ</h3>
+      <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start;">
+
+        <!-- Contact Info Card -->
+        <div class="reveal-left">
+          <div style="background: var(--vh-navy); border-radius: var(--radius-xl); padding: 48px 36px; color: #F1F5F9;">
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; color: #fff;">Thông tin Liên hệ</h3>
+            <p style="color: #64748B; margin-bottom: 40px; font-size: 0.9rem;">Sẵn sàng hỗ trợ từ Thứ 2 – Thứ 7</p>
             
-            <div class="d-flex mb-4 align-items-start">
-              <div class="fs-3 text-primary me-3"><i class="bi bi-telephone-fill"></i></div>
-              <div>
-                <h5 class="fw-bold mb-1">Điện thoại / Zalo</h5>
-                <p class="fs-5 text-body-secondary mb-0">0582 160 999 <span class="fs-6">(GĐ Kinh Doanh)</span></p>
+            <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 48px;">
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(232,83,14,0.15); display: flex; align-items: center; justify-content: center; color: var(--vh-orange); font-size: 1.1rem; flex-shrink: 0;">
+                  <i class="bi bi-telephone-fill"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 700; margin-bottom: 2px;">Điện thoại / Zalo</div>
+                  <div style="color: #94A3B8; font-size: 0.95rem;">0582 160 999<br><span style="font-size: 0.8rem;">(GĐ Kinh Doanh)</span></div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(232,83,14,0.15); display: flex; align-items: center; justify-content: center; color: var(--vh-orange); font-size: 1.1rem; flex-shrink: 0;">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 700; margin-bottom: 2px;">Email</div>
+                  <div style="color: #94A3B8; font-size: 0.95rem;">contact@viethantape.com</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(232,83,14,0.15); display: flex; align-items: center; justify-content: center; color: var(--vh-orange); font-size: 1.1rem; flex-shrink: 0;">
+                  <i class="bi bi-building-fill"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 700; margin-bottom: 2px;">Công ty</div>
+                  <div style="color: #94A3B8; font-size: 0.95rem;">CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN<br>(VIET HAN ADHESIVE TAPE CO., LTD)</div>
+                </div>
               </div>
             </div>
 
-            <div class="d-flex mb-4 align-items-start">
-              <div class="fs-3 text-primary me-3"><i class="bi bi-envelope-fill"></i></div>
-              <div>
-                <h5 class="fw-bold mb-1">Email</h5>
-                <p class="fs-5 text-body-secondary mb-0">contact@viethantape.com</p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px;">
+              <div style="font-weight: 700; margin-bottom: 16px; font-size: 0.9rem;">Kết nối nhanh</div>
+              <div style="display: flex; gap: 8px;">
+                <a href="tel:0582160999" class="vh-btn vh-btn--primary vh-btn--sm" style="flex: 1; justify-content: center;">
+                  <i class="bi bi-telephone"></i> Gọi ngay
+                </a>
+                <a href="https://zalo.me/0582160999" class="vh-btn vh-btn--sm" style="flex: 1; justify-content: center; background: rgba(255,255,255,0.1); color: #fff; border-radius: var(--radius-full);">
+                  <i class="bi bi-chat-dots"></i> Zalo
+                </a>
               </div>
-            </div>
-
-            <div class="d-flex align-items-start">
-              <div class="fs-3 text-primary me-3"><i class="bi bi-building-fill"></i></div>
-              <div>
-                <h5 class="fw-bold mb-1">Công ty</h5>
-                <p class="text-body-secondary mb-0">CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN<br>(VIET HAN ADHESIVE TAPE)</p>
-              </div>
-            </div>
-            
-            <hr class="my-5">
-            
-            <h5 class="fw-bold mb-3">Kết nối nhanh</h5>
-            <div class="d-flex gap-2">
-              <a href="tel:0582160999" class="btn btn-outline-primary"><i class="bi bi-telephone"></i> Gọi ngay</a>
-              <a href="https://zalo.me/0582160999" class="btn btn-outline-primary"><i class="bi bi-chat-dots"></i> Nhắn Zalo</a>
             </div>
           </div>
         </div>
 
         <!-- Contact Form -->
-        <div class="col-lg-7">
-          <div class="p-lg-5">
-            <h3 class="fw-bold mb-4">Gửi Yêu Cầu Báo Giá</h3>
-            <p class="text-body-secondary mb-4">Vui lòng điền thông tin chi tiết về sản phẩm hoặc yêu cầu kỹ thuật của bạn. Đội ngũ chuyên gia của chúng tôi sẽ phản hồi sớm nhất.</p>
-            
-            <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Yêu cầu đã được gửi thành công.'); this.reset();">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label fw-medium">Họ và tên *</label>
-                  <input type="text" class="form-control form-control-lg bg-body-tertiary" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label fw-medium">Số điện thoại *</label>
-                  <input type="tel" class="form-control form-control-lg bg-body-tertiary" required>
-                </div>
-                <div class="col-12">
-                  <label class="form-label fw-medium">Email / Tên công ty</label>
-                  <input type="text" class="form-control form-control-lg bg-body-tertiary">
-                </div>
-                <div class="col-12">
-                  <label class="form-label fw-medium">Sản phẩm quan tâm / Yêu cầu chi tiết *</label>
-                  <textarea class="form-control form-control-lg bg-body-tertiary" rows="5" required></textarea>
-                </div>
-                <div class="col-12 mt-4">
-                  <button type="submit" class="btn btn-primary btn-lg fw-semibold px-5"><i class="bi bi-send me-2"></i>Gửi Thông Tin</button>
-                </div>
+        <div class="reveal-right">
+          <div class="section-label">Gửi yêu cầu</div>
+          <h2 style="font-size: 2rem; margin-bottom: 8px;">Yêu cầu <span class="text-gradient">Báo giá</span></h2>
+          <p style="color: var(--text-secondary); margin-bottom: 36px;">Vui lòng điền thông tin, đội ngũ chuyên gia sẽ phản hồi trong vòng 24 giờ.</p>
+
+          <form onsubmit="event.preventDefault(); alert('✓ Cảm ơn bạn! Yêu cầu đã được gửi thành công. Chúng tôi sẽ liên hệ trong 24h.'); this.reset();">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Họ và tên *</label>
+                <input type="text" class="vh-input" placeholder="Nguyễn Văn A" required>
               </div>
-            </form>
-          </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Số điện thoại *</label>
+                <input type="tel" class="vh-input" placeholder="0912 345 678" required>
+              </div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Email / Tên công ty</label>
+              <input type="text" class="vh-input" placeholder="company@email.com">
+            </div>
+            <div style="margin-bottom: 24px;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Sản phẩm quan tâm / Yêu cầu chi tiết *</label>
+              <textarea class="vh-input" rows="5" placeholder="Vui lòng mô tả nhu cầu của bạn: loại sản phẩm, số lượng, kích thước..." required></textarea>
+            </div>
+            <button type="submit" class="vh-btn vh-btn--primary vh-btn--lg" style="width: 100%; justify-content: center;">
+              <i class="bi bi-send-fill"></i> Gửi Yêu cầu Báo giá
+            </button>
+          </form>
         </div>
-        
       </div>
     </div>
-  </main>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-body-tertiary pt-5 pb-4 mt-auto">
+  <footer class="vh-footer">
     <div class="container">
-      <div class="row g-4 mb-4">
-        <div class="col-lg-4 col-md-6">
-          <img src="images/page1_img0.png" alt="Logo" class="mb-4" style="height: 60px;">
-          <h5 class="fw-bold mb-3">CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN</h5>
+      <div class="vh-footer__grid">
+        <div class="vh-footer__brand">
+          <img src="images/page1_img0.png" alt="Việt Hàn Tape">
+          <p>Công ty TNHH Băng Dính Việt Hàn</p>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <h5 class="text-primary fw-bold mb-4">Sản Phẩm</h5>
-          <ul class="list-unstyled d-flex flex-column gap-2">
-            <li><a href="shop.html" class="text-body-secondary text-decoration-none">Băng dính đóng gói</a></li>
-            <li><a href="shop.html" class="text-body-secondary text-decoration-none">Băng dính công nghiệp</a></li>
+        <div>
+          <h4>Sản phẩm</h4>
+          <ul class="vh-footer__links">
+            <li><a href="shop.html">Băng dính đóng gói</a></li>
+            <li><a href="shop.html">Băng dính công nghiệp</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-12">
-          <h5 class="text-primary fw-bold mb-4">Liên Hệ</h5>
-          <ul class="list-unstyled text-body-secondary d-flex flex-column gap-3 mb-4">
-            <li><i class="bi bi-telephone-fill me-2 text-primary"></i> 0582 160 999</li>
-            <li><i class="bi bi-envelope-fill me-2 text-primary"></i> contact@viethantape.com</li>
+        <div>
+          <h4>Công ty</h4>
+          <ul class="vh-footer__links">
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
           </ul>
+        </div>
+        <div>
+          <h4>Liên hệ</h4>
+          <div class="vh-footer__contact-item"><i class="bi bi-telephone-fill"></i><span>0582 160 999</span></div>
+          <div class="vh-footer__contact-item"><i class="bi bi-envelope-fill"></i><span>contact@viethantape.com</span></div>
         </div>
       </div>
-      <div class="text-center text-body-secondary pt-4 border-top mt-4">
-        <small>&copy; 2026 Băng Dính Việt Hàn.</small>
+      <div class="vh-footer__bottom">
+        <span>&copy; 2026 Băng Dính Việt Hàn.</span>
+        <span>Thiết kế bởi Việt Hàn Digital</span>
       </div>
     </div>
   </footer>

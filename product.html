@@ -4,88 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chi tiết sản phẩm | Băng Dính Việt Hàn</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="css/main.css?v=2">
+  <link rel="stylesheet" href="css/main.css?v=3">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom py-3">
+  <nav class="vh-nav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/page1_img0.png" alt="Việt Hàn Logo">
-      </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto fw-medium">
-          <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
-          <li class="nav-item"><a class="nav-link active text-primary" href="shop.html">Sản phẩm</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
-        </ul>
-        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-          <button id="theme-switch" class="theme-switch" aria-label="Đổi giao diện">
-            <i class="bi bi-moon-fill"></i>
-          </button>
-          <a href="contact.html" class="btn btn-primary fw-semibold px-4">Báo giá</a>
-        </div>
+      <a class="vh-nav__logo" href="index.html"><img src="images/page1_img0.png" alt="Việt Hàn Tape"></a>
+      <ul class="vh-nav__links">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="shop.html" class="active">Sản phẩm</a></li>
+        <li><a href="about.html">Giới thiệu</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+      <div class="vh-nav__actions">
+        <button id="theme-switch" class="vh-theme-toggle"><i class="bi bi-moon-fill"></i></button>
+        <a href="contact.html" class="vh-btn vh-btn--primary vh-btn--sm"><i class="bi bi-lightning-charge-fill"></i> Báo giá</a>
+        <button class="vh-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
+  <div class="vh-nav__mobile">
+    <a href="index.html">Trang chủ</a><a href="shop.html">Sản phẩm</a><a href="about.html">Giới thiệu</a><a href="contact.html">Liên hệ</a>
+  </div>
 
-  <!-- Product Content -->
-  <main class="flex-grow-1 py-5">
-    <div class="container" id="product-detail-content">
-      <div class="text-center py-5">
-        <div class="spinner-border text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
+  <!-- Product Detail Content (rendered by JS) -->
+  <section class="vh-section" style="padding-top: 140px;" id="product-detail">
+    <div class="container">
+      <div style="text-align:center; padding: 80px 0;">
+        <div class="spinner-border" style="color: var(--vh-orange);" role="status"></div>
       </div>
     </div>
+  </section>
 
-    <!-- Related Products -->
-    <div class="container mt-5 pt-5 border-top">
-      <h3 class="fw-bold mb-4">Sản phẩm <span class="text-primary">Tương tự</span></h3>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4" id="related-grid">
-        <!-- Injected by JS -->
+  <!-- Related Products -->
+  <section class="vh-section vh-section--alt">
+    <div class="container">
+      <div class="vh-section__header reveal">
+        <div class="section-label">Sản phẩm tương tự</div>
+        <h2 class="vh-section__title">Có thể bạn <span class="text-gradient">Quan tâm</span></h2>
       </div>
+      <div class="vh-grid vh-grid--4 stagger-children" id="related-grid"></div>
     </div>
-  </main>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-body-tertiary pt-5 pb-4 mt-auto">
+  <footer class="vh-footer">
     <div class="container">
-      <div class="row g-4 mb-4">
-        <div class="col-lg-4 col-md-6">
-          <img src="images/page1_img0.png" alt="Logo" class="mb-4" style="height: 60px;">
-          <h5 class="fw-bold mb-3">CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN</h5>
+      <div class="vh-footer__grid">
+        <div class="vh-footer__brand">
+          <img src="images/page1_img0.png" alt="Việt Hàn Tape">
+          <p>Công ty TNHH Băng Dính Việt Hàn</p>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <h5 class="text-primary fw-bold mb-4">Sản Phẩm</h5>
-          <ul class="list-unstyled d-flex flex-column gap-2">
-            <li><a href="shop.html" class="text-body-secondary text-decoration-none">Băng dính đóng gói</a></li>
-            <li><a href="shop.html" class="text-body-secondary text-decoration-none">Băng dính công nghiệp</a></li>
+        <div>
+          <h4>Sản phẩm</h4>
+          <ul class="vh-footer__links">
+            <li><a href="shop.html">Băng dính đóng gói</a></li>
+            <li><a href="shop.html">Băng dính công nghiệp</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-12">
-          <h5 class="text-primary fw-bold mb-4">Liên Hệ</h5>
-          <ul class="list-unstyled text-body-secondary d-flex flex-column gap-3 mb-4">
-            <li><i class="bi bi-telephone-fill me-2 text-primary"></i> 0582 160 999</li>
-            <li><i class="bi bi-envelope-fill me-2 text-primary"></i> contact@viethantape.com</li>
+        <div>
+          <h4>Công ty</h4>
+          <ul class="vh-footer__links">
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
           </ul>
+        </div>
+        <div>
+          <h4>Liên hệ</h4>
+          <div class="vh-footer__contact-item"><i class="bi bi-telephone-fill"></i><span>0582 160 999</span></div>
+          <div class="vh-footer__contact-item"><i class="bi bi-envelope-fill"></i><span>contact@viethantape.com</span></div>
         </div>
       </div>
-      <div class="text-center text-body-secondary pt-4 border-top mt-4">
-        <small>&copy; 2026 Băng Dính Việt Hàn.</small>
+      <div class="vh-footer__bottom">
+        <span>&copy; 2026 Băng Dính Việt Hàn.</span>
+        <span>Thiết kế bởi Việt Hàn Digital</span>
       </div>
     </div>
   </footer>
@@ -96,98 +97,110 @@
     document.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(window.location.search);
       const productId = parseInt(urlParams.get('id'));
-      
       const product = products.find(p => p.id === productId);
-      const contentContainer = document.getElementById('product-detail-content');
-      
+      const container = document.getElementById('product-detail');
+
       if (!product) {
-        contentContainer.innerHTML = `
-          <div class="text-center py-5">
-            <h1 class="text-primary display-5 fw-bold mb-3">404 - Không tìm thấy sản phẩm</h1>
-            <p class="lead mb-4">Sản phẩm bạn tìm kiếm không tồn tại hoặc đã bị xóa.</p>
-            <a href="shop.html" class="btn btn-primary px-4">Quay lại cửa hàng</a>
-          </div>
-        `;
+        container.innerHTML = `
+          <div class="container" style="text-align:center; padding: 120px 0 80px;">
+            <h1 style="font-size: 4rem; margin-bottom: 16px;">404</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 32px;">Sản phẩm không tồn tại hoặc đã bị xóa.</p>
+            <a href="shop.html" class="vh-btn vh-btn--primary">Quay lại cửa hàng</a>
+          </div>`;
         return;
       }
 
       document.title = `${product.name} | Băng Dính Việt Hàn`;
 
-      contentContainer.innerHTML = `
-        <nav aria-label="breadcrumb" class="mb-4">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="shop.html" class="text-decoration-none">Sản phẩm</a></li>
-            <li class="breadcrumb-item active" aria-current="page">${product.name}</li>
-          </ol>
-        </nav>
+      container.innerHTML = `
+        <div class="container">
+          <!-- Breadcrumb -->
+          <nav style="margin-bottom: 32px; font-size: 0.85rem; color: var(--text-muted);">
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Trang chủ</a>
+            <span style="margin: 0 8px;">/</span>
+            <a href="shop.html" style="color: var(--text-muted); text-decoration: none;">Sản phẩm</a>
+            <span style="margin: 0 8px;">/</span>
+            <span style="color: var(--vh-orange);">${product.name}</span>
+          </nav>
 
-        <div class="row g-5">
-          <div class="col-lg-6">
-            <div class="bg-white p-4 rounded-3 shadow-sm border h-100 d-flex align-items-center justify-content-center">
-              <img src="${product.image}" alt="${product.name}" class="img-fluid rounded">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+            <!-- Product Image -->
+            <div class="reveal-left">
+              <div style="background: #fff; border-radius: var(--radius-xl); padding: 40px; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                <img src="${product.image}" alt="${product.name}" style="width: 100%; object-fit: contain; max-height: 400px;">
+              </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2 fs-6 rounded-pill">${product.category}</span>
-            <h1 class="display-5 fw-bold mb-2">${product.name}</h1>
-            <h4 class="text-body-secondary fw-normal mb-4">${product.nameEn}</h4>
             
-            <p class="lead mb-4 border-start border-primary border-4 ps-3">
-              Sản phẩm <strong>${product.name}</strong> chất lượng cao từ Băng Dính Việt Hàn. Sản xuất trên dây chuyền công nghệ hiện đại, đáp ứng yêu cầu khắt khe về độ bám dính.
-            </p>
+            <!-- Product Info -->
+            <div class="reveal-right">
+              <div style="display: inline-flex; padding: 6px 16px; background: rgba(232,83,14,0.08); border: 1px solid rgba(232,83,14,0.15); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; color: var(--vh-orange); margin-bottom: 16px;">
+                ${product.category}
+              </div>
+              <h1 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px;">${product.name}</h1>
+              <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 32px;">${product.nameEn}</p>
 
-            <table class="table table-bordered mb-4">
-              <tbody>
-                <tr>
-                  <th class="bg-body-tertiary w-25">Nhà sản xuất</th>
-                  <td>Việt Hàn Tape</td>
-                </tr>
-                <tr>
-                  <th class="bg-body-tertiary">Tình trạng</th>
-                  <td><span class="badge bg-success">Sẵn hàng số lượng lớn</span></td>
-                </tr>
-                <tr>
-                  <th class="bg-body-tertiary">Đóng gói</th>
-                  <td>Theo yêu cầu khách hàng</td>
-                </tr>
-              </tbody>
-            </table>
+              <div style="border-left: 3px solid var(--vh-orange); padding-left: 20px; margin-bottom: 32px; color: var(--text-secondary); line-height: 1.8;">
+                Sản phẩm <strong>${product.name}</strong> chất lượng cao từ Băng Dính Việt Hàn. Sản xuất trên dây chuyền công nghệ hiện đại, đáp ứng yêu cầu khắt khe về độ bám dính, độ bền kéo và tính ổn định.
+              </div>
 
-            <div class="card border-primary shadow-sm">
-              <div class="card-body p-4">
-                <h5 class="card-title fw-bold mb-3"><i class="bi bi-box-seam me-2 text-primary"></i>Yêu cầu báo giá / Nhận mẫu thử</h5>
-                <p class="card-text text-body-secondary mb-4">Liên hệ trực tiếp với bộ phận kinh doanh B2B để nhận chính sách giá sỉ tốt nhất.</p>
-                <div class="d-grid gap-2 d-md-flex">
-                  <a href="tel:0582160999" class="btn btn-primary px-4 fw-semibold"><i class="bi bi-telephone-fill me-2"></i>0582 160 999</a>
-                  <a href="https://zalo.me/0582160999" class="btn btn-outline-primary px-4 fw-semibold"><i class="bi bi-chat-dots-fill me-2"></i>Chat Zalo</a>
+              <!-- Specs Table -->
+              <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 24px; margin-bottom: 32px; border: 1px solid var(--border-color);">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 0.9rem;">
+                  <div><span style="color: var(--text-muted);">Nhà sản xuất</span><br><strong>Việt Hàn Tape</strong></div>
+                  <div><span style="color: var(--text-muted);">Tình trạng</span><br><strong style="color: #10B981;">● Sẵn hàng</strong></div>
+                  <div><span style="color: var(--text-muted);">Đóng gói</span><br><strong>Theo yêu cầu</strong></div>
+                  <div><span style="color: var(--text-muted);">MOQ</span><br><strong>Liên hệ</strong></div>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div style="background: var(--bg-card); border: 2px solid rgba(232,83,14,0.15); border-radius: var(--radius-lg); padding: 28px;">
+                <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 8px;">
+                  <i class="bi bi-box-seam" style="color: var(--vh-orange); margin-right: 8px;"></i>
+                  Yêu cầu Báo giá / Nhận mẫu thử
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+                  Liên hệ trực tiếp với bộ phận kinh doanh B2B để nhận chính sách giá sỉ tốt nhất.
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                  <a href="tel:0582160999" class="vh-btn vh-btn--primary">
+                    <i class="bi bi-telephone-fill"></i> 0582 160 999
+                  </a>
+                  <a href="https://zalo.me/0582160999" class="vh-btn vh-btn--outline">
+                    <i class="bi bi-chat-dots-fill"></i> Chat Zalo
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      `;
+        </div>`;
 
+      // Related products
       const relatedGrid = document.getElementById('related-grid');
-      const relatedProducts = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
-      if (relatedProducts.length < 4) {
-        relatedProducts.push(...products.filter(p => p.id !== product.id && p.category !== product.category).slice(0, 4 - relatedProducts.length));
+      let related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+      if (related.length < 4) {
+        related.push(...products.filter(p => p.id !== product.id && p.category !== product.category).slice(0, 4 - related.length));
       }
-
-      relatedProducts.forEach(p => {
-        relatedGrid.innerHTML += `
-          <div class="col">
-            <div class="card h-100 shadow-sm border-0">
-              <img src="${p.image}" class="card-img-top product-img border-bottom" alt="${p.name}">
-              <div class="card-body d-flex flex-column">
-                <span class="text-primary small fw-bold text-uppercase mb-2">${p.category}</span>
-                <h5 class="card-title fs-6">${p.name}</h5>
-                <a href="product.html?id=${p.id}" class="btn btn-sm btn-outline-primary mt-auto w-100">Chi tiết</a>
-              </div>
-            </div>
+      relatedGrid.innerHTML = related.map(p => `
+        <div class="vh-product-card">
+          <div class="vh-product-card__img"><img src="${p.image}" alt="${p.name}"></div>
+          <div class="vh-product-card__body">
+            <div class="vh-product-card__cat">${p.category}</div>
+            <div class="vh-product-card__title">${p.name}</div>
+            <a href="product.html?id=${p.id}" class="vh-product-card__btn">Chi tiết <i class="bi bi-arrow-right"></i></a>
           </div>
-        `;
-      });
+        </div>
+      `).join('');
+
+      // Trigger reveal animations
+      setTimeout(() => {
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-children').forEach(el => {
+          const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+          }, { threshold: 0.1 });
+          obs.observe(el);
+        });
+      }, 100);
     });
   </script>
 </body>
