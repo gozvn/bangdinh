@@ -1,126 +1,124 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-bs-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sản Phẩm | Băng Dính Việt Hàn</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .shop-header {
-      background: linear-gradient(rgba(10, 10, 26, 0.9), rgba(10, 10, 26, 0.9)), url('images/page5_img0.png') center/cover;
-      padding: 120px 0 60px;
-      text-align: center;
-    }
-    .filters {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text-main);
-      padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all var(--transition-speed);
-    }
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--primary-color);
-      border-color: var(--primary-color);
-    }
-  </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-  <!-- Header -->
-  <header>
-    <div class="container navbar">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/page1_img0.png" alt="Việt Hàn Logo">
-        </a>
-      </div>
-      <div class="nav-right">
-        <nav class="nav-links">
-          <a href="index.html">Trang chủ</a>
-          <a href="shop.html" style="color: var(--primary-color)">Sản phẩm</a>
-          <a href="about.html">Giới thiệu</a>
-          <a href="contact.html">Liên hệ</a>
-        </nav>
-        <button id="theme-switch" class="theme-switch" aria-label="Đổi giao diện">
-          <span class="icon">🌙</span>
-        </button>
-        <div class="hamburger">☰</div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/page1_img0.png" alt="Việt Hàn Logo">
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto fw-medium">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-primary" aria-current="page" href="shop.html">Sản phẩm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Giới thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Liên hệ</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+          <button id="theme-switch" class="theme-switch" aria-label="Đổi giao diện">
+            <i class="bi bi-moon-fill"></i>
+          </button>
+          <a href="contact.html" class="btn btn-primary fw-semibold px-4">Báo giá</a>
+        </div>
       </div>
     </div>
-  </header>
+  </nav>
 
   <!-- Shop Header -->
-  <div class="shop-header">
-    <div class="container">
-      <h1 style="font-size: 3rem; margin-bottom: 15px;">Tất cả Sản phẩm</h1>
-      <p style="color: var(--text-muted); font-size: 1.1rem;">Giải pháp bảo vệ hàng hóa đa dạng và chất lượng từ Việt Hàn</p>
+  <div class="bg-body-tertiary border-bottom">
+    <div class="container py-5 text-center">
+      <h1 class="display-5 fw-bold mb-3">Danh mục Sản phẩm</h1>
+      <p class="lead text-body-secondary mb-0">Khám phá các giải pháp băng keo và vật liệu đóng gói từ Việt Hàn Tape.</p>
     </div>
   </div>
 
-  <!-- Shop Content -->
-  <section class="container">
-    <div class="filters" id="shop-filters">
-      <button class="filter-btn active" data-filter="all">Tất cả</button>
-      <button class="filter-btn" data-filter="Băng dính đóng gói">Đóng gói</button>
-      <button class="filter-btn" data-filter="Băng dính công nghiệp">Công nghiệp</button>
-      <button class="filter-btn" data-filter="Băng dính chuyên dụng">Chuyên dụng</button>
-      <button class="filter-btn" data-filter="Băng dính văn phòng">Văn phòng</button>
-      <button class="filter-btn" data-filter="Màng PE & Phụ kiện">Màng PE</button>
-    </div>
+  <!-- Main Content -->
+  <main class="flex-grow-1 py-5">
+    <div class="container">
+      
+      <!-- Filters -->
+      <div class="d-flex justify-content-center flex-wrap gap-2 mb-5" id="shop-filters">
+        <button class="btn btn-primary rounded-pill px-4 filter-btn active" data-filter="all">Tất cả</button>
+        <button class="btn btn-outline-secondary rounded-pill px-4 filter-btn" data-filter="Băng dính đóng gói">Đóng gói</button>
+        <button class="btn btn-outline-secondary rounded-pill px-4 filter-btn" data-filter="Băng dính công nghiệp">Công nghiệp</button>
+        <button class="btn btn-outline-secondary rounded-pill px-4 filter-btn" data-filter="Băng dính chuyên dụng">Chuyên dụng</button>
+        <button class="btn btn-outline-secondary rounded-pill px-4 filter-btn" data-filter="Băng dính văn phòng">Văn phòng</button>
+        <button class="btn btn-outline-secondary rounded-pill px-4 filter-btn" data-filter="Màng PE & Phụ kiện">Màng PE</button>
+      </div>
 
-    <div class="product-grid" id="full-shop-grid">
-      <!-- Products injected here via JS -->
+      <!-- Product Grid -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="full-shop-grid">
+        <!-- Injected by JS -->
+      </div>
+      
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
+  <footer class="bg-body-tertiary pt-5 pb-4 mt-auto">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <img src="images/page1_img0.png" alt="Logo" style="height: 50px; margin-bottom: 20px;">
-          <p>CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN</p>
-          <p>Tiên phong Công nghệ - Đối tác Tin cậy</p>
+      <div class="row g-4 mb-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="images/page1_img0.png" alt="Logo" class="mb-4" style="height: 60px;">
+          <h5 class="fw-bold mb-3">CÔNG TY TNHH BĂNG DÍNH VIỆT HÀN</h5>
+          <p class="text-body-secondary mb-0">Tiên phong Công nghệ - Đối tác Tin cậy</p>
         </div>
-        <div class="footer-col">
-          <h3>Sản Phẩm</h3>
-          <ul>
-            <li><a href="shop.html">Băng dính đóng gói</a></li>
-            <li><a href="shop.html">Băng dính công nghiệp</a></li>
-            <li><a href="shop.html">Băng dính chuyên dụng</a></li>
-            <li><a href="shop.html">Màng PE & Phụ kiện</a></li>
+        
+        <div class="col-lg-4 col-md-6">
+          <h5 class="text-primary fw-bold mb-4">Sản Phẩm</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a href="shop.html" class="text-body-secondary text-decoration-none">Băng dính đóng gói</a></li>
+            <li><a href="shop.html" class="text-body-secondary text-decoration-none">Băng dính công nghiệp</a></li>
+            <li><a href="shop.html" class="text-body-secondary text-decoration-none">Băng dính chuyên dụng</a></li>
+            <li><a href="shop.html" class="text-body-secondary text-decoration-none">Màng PE & Phụ kiện</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h3>Liên Hệ</h3>
-          <p>Hotline (GĐ Kinh Doanh): 0582 160 999</p>
-          <p>Email: contact@viethantape.com</p>
-          <div style="margin-top: 15px;">
-            <a href="contact.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9rem;">Yêu cầu báo giá</a>
-          </div>
+        
+        <div class="col-lg-4 col-md-12">
+          <h5 class="text-primary fw-bold mb-4">Liên Hệ</h5>
+          <ul class="list-unstyled text-body-secondary d-flex flex-column gap-3 mb-4">
+            <li><i class="bi bi-telephone-fill me-2 text-primary"></i> Hotline (GĐ Kinh Doanh): 0582 160 999</li>
+            <li><i class="bi bi-envelope-fill me-2 text-primary"></i> Email: contact@viethantape.com</li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Băng Dính Việt Hàn. All rights reserved.</p>
+      <div class="text-center text-body-secondary pt-4 border-top mt-4">
+        <small>&copy; 2026 Băng Dính Việt Hàn. All rights reserved.</small>
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script>
-    // Shop specific logic
     document.addEventListener('DOMContentLoaded', () => {
       const shopGrid = document.getElementById('full-shop-grid');
       const filterBtns = document.querySelectorAll('.filter-btn');
@@ -135,30 +133,31 @@
 
         filteredProducts.forEach(product => {
           shopGrid.innerHTML += `
-            <div class="product-card">
-              <img src="${product.image}" alt="${product.name}" class="product-img">
-              <div class="product-info">
-                <div class="product-category">${product.category}</div>
-                <h3 class="product-title">${product.name}</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">${product.nameEn}</p>
-                <a href="product.html?id=${product.id}" class="btn btn-outline" style="width: 100%; text-align: center;">Chi tiết</a>
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0">
+                <img src="${product.image}" class="card-img-top product-img border-bottom" alt="${product.name}">
+                <div class="card-body d-flex flex-column">
+                  <span class="text-primary small fw-bold text-uppercase mb-2">${product.category}</span>
+                  <h5 class="card-title">${product.name}</h5>
+                  <p class="card-text text-muted small mb-4">${product.nameEn}</p>
+                  <a href="product.html?id=${product.id}" class="btn btn-outline-primary mt-auto w-100">Chi tiết</a>
+                </div>
               </div>
             </div>
           `;
         });
       }
 
-      // Initial render
       renderProducts();
 
-      // Filter click events
       filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          // Remove active class from all
-          filterBtns.forEach(b => b.classList.remove('active'));
-          // Add to clicked
-          btn.classList.add('active');
-          // Filter
+          filterBtns.forEach(b => {
+            b.classList.remove('btn-primary', 'active');
+            b.classList.add('btn-outline-secondary');
+          });
+          btn.classList.remove('btn-outline-secondary');
+          btn.classList.add('btn-primary', 'active');
           renderProducts(btn.dataset.filter);
         });
       });
