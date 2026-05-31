@@ -2,7 +2,7 @@
   /* Override Bootstrap Primary Color with Viet Han Orange */
   --bs-primary: #E8530E;
   --bs-primary-rgb: 232, 83, 14;
-  -- corporate-blue: #003366;
+  --corporate-blue: #003366;
 }
 
 body {
