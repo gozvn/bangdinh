@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liên Hệ | Băng Dính Việt Hàn</title>
+  <meta name="description" content="Liên hệ ngay với Băng Dính Việt Hàn để nhận báo giá sỉ tốt nhất. Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ doanh nghiệp 24/7.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +27,7 @@
         <li><a href="contact.html" class="active">Liên hệ</a></li>
       </ul>
       <div class="vh-nav__actions">
-        <button id="theme-switch" class="vh-theme-toggle"><i class="bi bi-moon-fill"></i></button>
+        <button id="theme-switch" class="vh-theme-toggle" aria-label="Đổi giao diện"><i class="bi bi-moon-fill"></i></button>
         <a href="contact.html" class="vh-btn vh-btn--primary vh-btn--sm"><i class="bi bi-lightning-charge-fill"></i> Báo giá</a>
         <button class="vh-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
@@ -52,13 +53,13 @@
 
         <!-- Contact Info Card -->
         <div class="reveal-left">
-          <div style="background: var(--vh-navy); border-radius: var(--radius-xl); padding: 48px 36px; color: #F1F5F9;">
+          <div class="vh-contact-card">
             <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; color: #fff;">Thông tin Liên hệ</h3>
             <p style="color: #64748B; margin-bottom: 40px; font-size: 0.9rem;">Sẵn sàng hỗ trợ từ Thứ 2 – Thứ 7</p>
             
             <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 48px;">
               <div style="display: flex; gap: 16px; align-items: flex-start;">
-                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(232,83,14,0.15); display: flex; align-items: center; justify-content: center; color: var(--vh-orange); font-size: 1.1rem; flex-shrink: 0;">
+                <div class="vh-icon-box">
                   <i class="bi bi-telephone-fill"></i>
                 </div>
                 <div>
@@ -68,7 +69,7 @@
               </div>
 
               <div style="display: flex; gap: 16px; align-items: flex-start;">
-                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(232,83,14,0.15); display: flex; align-items: center; justify-content: center; color: var(--vh-orange); font-size: 1.1rem; flex-shrink: 0;">
+                <div class="vh-icon-box">
                   <i class="bi bi-envelope-fill"></i>
                 </div>
                 <div>
@@ -78,7 +79,7 @@
               </div>
 
               <div style="display: flex; gap: 16px; align-items: flex-start;">
-                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(232,83,14,0.15); display: flex; align-items: center; justify-content: center; color: var(--vh-orange); font-size: 1.1rem; flex-shrink: 0;">
+                <div class="vh-icon-box">
                   <i class="bi bi-building-fill"></i>
                 </div>
                 <div>
@@ -142,30 +143,47 @@
       <div class="vh-footer__grid">
         <div class="vh-footer__brand">
           <img src="images/logo.png" alt="Việt Hàn Tape">
-          <p>Công ty TNHH Băng Dính Việt Hàn</p>
+          <p>Công ty TNHH Băng Dính Việt Hàn — Nhà sản xuất & phân phối hàng đầu các giải pháp đóng gói chuyên dụng tại Việt Nam.</p>
         </div>
+
         <div>
           <h4>Sản phẩm</h4>
           <ul class="vh-footer__links">
             <li><a href="shop.html">Băng dính đóng gói</a></li>
             <li><a href="shop.html">Băng dính công nghiệp</a></li>
+            <li><a href="shop.html">Băng dính chuyên dụng</a></li>
+            <li><a href="shop.html">Màng PE & Phụ kiện</a></li>
           </ul>
         </div>
+
         <div>
           <h4>Công ty</h4>
           <ul class="vh-footer__links">
             <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="about.html">Năng lực sản xuất</a></li>
             <li><a href="contact.html">Liên hệ</a></li>
           </ul>
         </div>
+
         <div>
           <h4>Liên hệ</h4>
-          <div class="vh-footer__contact-item"><i class="bi bi-telephone-fill"></i><span>0582 160 999</span></div>
-          <div class="vh-footer__contact-item"><i class="bi bi-envelope-fill"></i><span>contact@viethantape.com</span></div>
+          <div class="vh-footer__contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <span>0582 160 999 (GĐ Kinh Doanh)</span>
+          </div>
+          <div class="vh-footer__contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <span>contact@viethantape.com</span>
+          </div>
+          <div class="vh-footer__contact-item">
+            <i class="bi bi-building-fill"></i>
+            <span>VIET HAN ADHESIVE TAPE CO., LTD</span>
+          </div>
         </div>
       </div>
+
       <div class="vh-footer__bottom">
-        <span>&copy; 2026 Băng Dính Việt Hàn.</span>
+        <span>&copy; 2026 Băng Dính Việt Hàn. All rights reserved.</span>
         <span>Thiết kế bởi Việt Hàn Digital</span>
       </div>
     </div>

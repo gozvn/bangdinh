@@ -70,7 +70,7 @@
 }
 
 /* === BASE RESET === */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -559,7 +559,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .vh-product-card__img {
   height: 240px;
-  background: #fff;
+  background: var(--bg-card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -941,6 +941,10 @@ h1, h2, h3, h4, h5, h6 {
   .vh-footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 
+.vh-nav__mobile {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .vh-nav__links { display: none; }
   .vh-hamburger { display: flex; }
@@ -974,6 +978,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
     text-decoration: none;
   }
+
   
   .vh-hero { min-height: auto; padding: 120px 0 60px; }
   .vh-hero__grid { gap: 32px; }
@@ -1078,32 +1083,49 @@ textarea.vh-input {
   min-height: 120px;
 }
 
-/* Bootstrap overrides for buttons used in other pages */
-.btn-primary {
-  background: var(--gradient-brand) !important;
-  border: none !important;
-  box-shadow: 0 4px 20px rgba(232,83,14,0.25);
-  border-radius: var(--radius-full) !important;
-  font-weight: 700 !important;
-  transition: all 0.3s var(--ease-spring) !important;
+/* === UTILITIES & NEW COMPONENTS === */
+.vh-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(232,83,14,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vh-orange);
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(232,83,14,0.35);
+.vh-icon-box--sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(232,83,14,0.1);
+  font-size: 1rem;
 }
 
-.btn-outline-primary {
-  border-color: var(--vh-orange) !important;
-  color: var(--vh-orange) !important;
-  border-radius: var(--radius-full) !important;
-  font-weight: 700 !important;
-  transition: all 0.3s var(--ease-spring) !important;
+.vh-contact-card {
+  background: var(--vh-navy);
+  border-radius: var(--radius-xl);
+  padding: 48px 36px;
+  color: #F1F5F9;
 }
 
-.btn-outline-primary:hover {
-  background: var(--gradient-brand) !important;
-  border-color: var(--vh-orange) !important;
-  color: #fff !important;
-  transform: translateY(-2px);
+.vh-badge {
+  display: inline-flex;
+  padding: 6px 16px;
+  background: rgba(232,83,14,0.08);
+  border: 1px solid rgba(232,83,14,0.15);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--vh-orange);
+}
+
+.vh-cta-box {
+  background: var(--bg-card);
+  border: 2px solid rgba(232,83,14,0.15);
+  border-radius: var(--radius-lg);
+  padding: 28px;
 }
